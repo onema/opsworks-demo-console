@@ -13,6 +13,11 @@ curl -sS https://getcomposer.org/installer | php
 php composer.phar install
 ```
 
+Copy the file ```app/config/parameters.yml.dist``` to ```app/config/parameters.yml```
+
+In **parameters.yml** update the parameters ```aws_api_key``` and ```aws_api_secret``` to be valid 
+Amazon API Key and API Secret.
+
 ##Usage
 
 ```
