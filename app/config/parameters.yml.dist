@@ -1,0 +1,5 @@
+parameters:
+    aws_api_key: APIKEY
+    aws_api_secret: APISECRET
+    aws_region: us-east-1
+    
