@@ -11,6 +11,7 @@
             "email": "kinojman@gmail.com"
         }
     ],
+    "minimum-stability": "dev",
     "require": {
         "php": ">=5.3.3",
         "symfony/console": "2.4.*@dev",
