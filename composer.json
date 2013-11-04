@@ -1,6 +1,6 @@
 {
     "name": "onema/opsworks-demo-console",
-    "homepage": "onema.io",
+    "homepage": "http://onema.io",
     "description":"AWS OpsWorks Command Line Tool - PHP",
     "keywords":["was", "opsworks", "console", "CLI", "terminal", "command"],
     "type":"library",
