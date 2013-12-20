@@ -9,9 +9,15 @@ set_time_limit(0);
 require_once __DIR__.'/../vendor/autoload.php';
 
 use Symfony\Component\Console\Application;
-use Onema\OpsWorksConsole\Command\UpdateSshKeyCommand;
+use Onema\OpsWorksConsole\Command\UpdateStackChefCommand;
+use Onema\OpsWorksConsole\Command\CreateStackCommand;
+use Onema\OpsWorksConsole\Command\CreatePHPLayerCommand;
+use Onema\OpsWorksConsole\Command\CreateAppCommand;
 
 $application = new Application();
-$application->add(new UpdateSshKeyCommand());
+$application->add(new UpdateStackChefCommand());
+$application->add(new CreateStackCommand());
+$application->add(new CreatePHPLayerCommand());
+$application->add(new CreateAppCommand());
 $application->run();
        
