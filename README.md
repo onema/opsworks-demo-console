@@ -16,10 +16,11 @@ php composer.phar install
 ##Usage
 
 ```
-php app/console opsworks:update:sshkey stack arn-role ssh-key-path
+php app/console opsworks:update:stack:chef stack type url ssh-key-path
 ``` 
 
 Arguments:
  - stack                 Stack ID
- - arn-role              Service Role Arn
+ - type                  Repository type
+ - URL                   Repository URL
  - ssh-key-path          Path to ssh key
