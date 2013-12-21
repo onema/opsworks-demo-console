@@ -53,13 +53,9 @@ class UpdateStackChefCommand extends OpsWorksCommand
     {
         // Get Arguments
         $stackId = $input->getArgument('stack');
-        $type = $input->getArgument('type');
-        $url = $input->getArgument('url');
-        $sshKeyPath = $input->getArgument('ssh-key-path');
-        
-        // Get SSH Key from path
-        $handle = fopen($sshKeyPath, 'r');
-        $sshKey = fread($handle, filesize($sshKeyPath));
+        $type    = $input->getArgument('type');
+        $url     = $input->getArgument('url');
+        $sshKey  = $this->getShhKeyFromPath($input->getArgument('ssh-key-path'));
         
         $this->client->updateStack(array(
             // StackId is required
