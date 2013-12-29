@@ -39,4 +39,18 @@ class OpsWorksCommand  extends Command
             'region' => $this->parameters['aws_region'],
         ));
     }
+
+    protected function getShhKeyFromPath ($sshKeyPath)
+    {
+        if (isset($sshKeyPath)) {
+            // Get SSH Key from path
+            $sshKeyPath = realpath($sshKeyPath);
+            $handle = fopen($sshKeyPath, 'r');
+            $sshKey = fread($handle, filesize($sshKeyPath));
+        } else {
+            $sshKey = null;
+        }
+
+        return $sshKey;
+    }
 }
