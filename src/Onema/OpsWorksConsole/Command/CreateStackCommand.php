@@ -1,6 +1,6 @@
 <?php
 /*
- * This file is part of the CPCStrategy {OpsWorks} Package. 
+ * This file is part of the Onema {OpsWorks} Package.
  * For the full copyright and license information, 
  * please view the LICENSE file that was distributed 
  * with this source code.
@@ -14,7 +14,7 @@ use Symfony\Component\Console\Output\OutputInterface;
  * CreateStackCommand - Description. 
  *
  * @author Juan Manuel Torres <kinojman@gmail.com>
- * @copyright (c) 2013, CPC Strategy Development Team
+ * @copyright (c) 2013, onema.io
  */
 class CreateStackCommand extends OpsWorksCommand
 {
