@@ -42,6 +42,11 @@ class UpdateStackChefCommand extends OpsWorksCommand
                 'Repository URL'
             )
             ->addArgument(
+                'revision',
+                InputArgument::REQUIRED,
+                'Revision or branch'
+            )
+            ->addArgument(
                 'ssh-key-path',
                 InputArgument::REQUIRED,
                 'Path to ssh key'
@@ -55,6 +60,8 @@ class UpdateStackChefCommand extends OpsWorksCommand
         $stackId = $input->getArgument('stack');
         $type    = $input->getArgument('type');
         $url     = $input->getArgument('url');
+        $revision = $input->getArgument('revision');
+
         $sshKey  = $this->getShhKeyFromPath($input->getArgument('ssh-key-path'));
         
         $this->client->updateStack(array(
@@ -66,6 +73,7 @@ class UpdateStackChefCommand extends OpsWorksCommand
                 'Type' => $type,
                 'Url'  => $url,
                 'SshKey' => $sshKey,
+                'Revision' => $revision,
             ),
         ));
         

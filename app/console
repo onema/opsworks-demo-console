@@ -15,6 +15,7 @@ use Onema\OpsWorksConsole\Command\CreatePHPLayerCommand;
 use Onema\OpsWorksConsole\Command\UpdatePHPLayerCommand;
 use Onema\OpsWorksConsole\Command\CreateAppCommand;
 use Onema\OpsWorksConsole\Command\CreateStartInstanceCommand;
+use Onema\OpsWorksConsole\Command\CreateAllCommand;
 
 $application = new Application();
 $application->add(new UpdateStackChefCommand());
@@ -23,5 +24,6 @@ $application->add(new CreatePHPLayerCommand());
 $application->add(new CreateAppCommand());
 $application->add(new UpdatePHPLayerCommand());
 $application->add(new CreateStartInstanceCommand);
+$application->add(new CreateAllCommand());
 $application->run();
        

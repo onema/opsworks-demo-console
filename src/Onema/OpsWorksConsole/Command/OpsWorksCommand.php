@@ -44,9 +44,7 @@ class OpsWorksCommand  extends Command
     {
         if (isset($sshKeyPath)) {
             // Get SSH Key from path
-            echo $sshKeyPath.PHP_EOL;
             $sshKeyPath = realpath($sshKeyPath);
-            echo $sshKeyPath.PHP_EOL;
             $handle = fopen($sshKeyPath, 'r');
             $sshKey = fread($handle, filesize($sshKeyPath));
         } else {
