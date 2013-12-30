@@ -88,6 +88,21 @@ php app/console opsworks:create:app stack  name --source-type="..." --source-url
  - **source-url:**            Repository URL.
  - **source revision:**       Revision or Branch.
  - **ssh-key-path:**          Path to ssh key.
+
+ 
+###Update Application###
+```
+php app/console opsworks:update:app app  --source-type="..." --source-url="..." --source-revision="..." --ssh-key-path="..."
+``` 
+
+####Arguments:####
+ - **app:**                   App ID.
+
+####Options:####
+ - **source-type:**           Repository type.
+ - **source-url:**            Repository URL.
+ - **source revision:**       Revision or Branch.
+ - **ssh-key-path:**          Path to ssh key.
  
 
 ###Create and start instance###
