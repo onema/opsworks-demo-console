@@ -58,7 +58,12 @@ class CreateAppCommand extends OpsWorksCommand
                 InputOption::VALUE_REQUIRED,
                 'Repository version or revision'
             )
-
+            ->addOption(
+                'document-root',
+                null,
+                InputOption::VALUE_REQUIRED,
+                'Document root'
+            )
         ;
     }
 
@@ -79,6 +84,7 @@ class CreateAppCommand extends OpsWorksCommand
         $options['AppSource']['Url']  = $input->getOption('source-url');
         $options['AppSource']['Revision'] = $input->getOption('source-revision');
         $options['AppSource']['SshKey']   = $this->getShhKeyFromPath($input->getOption('ssh-key-path'));
+        $options['Attributes']['DocumentRoot'] = $input->getOption('document-root');
 
         $result = $this->client->createApp($options);
 
