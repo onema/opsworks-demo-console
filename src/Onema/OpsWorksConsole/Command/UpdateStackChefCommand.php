@@ -12,6 +12,7 @@ namespace Onema\OpsWorksConsole\Command;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
+use Symfony\Component\Console\Input\InputOption;
 
 /**
  * Description of GenerateReportCommand
@@ -51,6 +52,12 @@ class UpdateStackChefCommand extends OpsWorksCommand
                 InputArgument::REQUIRED,
                 'Path to ssh key'
             )
+            ->addOption(
+                'custom-json',
+                null,
+                InputOption::VALUE_REQUIRED,
+                'A string that contains user-defined, custom JSON.'
+            )
         ;
     }
 
@@ -61,6 +68,7 @@ class UpdateStackChefCommand extends OpsWorksCommand
         $type    = $input->getArgument('type');
         $url     = $input->getArgument('url');
         $revision = $input->getArgument('revision');
+        $customJson = $input->getOption('custom-json');
 
         $sshKey  = $this->getShhKeyFromPath($input->getArgument('ssh-key-path'));
         
@@ -75,6 +83,7 @@ class UpdateStackChefCommand extends OpsWorksCommand
                 'SshKey' => $sshKey,
                 'Revision' => $revision,
             ),
+            'CustomJson' => $customJson,
         ));
         
         $output->writeln('<info>SUCCESS!</info>');

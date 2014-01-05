@@ -27,7 +27,7 @@ class CreateStackCommand extends OpsWorksCommand
                 'name',
                 null,
                 InputArgument::REQUIRED,
-                'Stack ID'
+                'Stack Name'
             )
         ;
     }

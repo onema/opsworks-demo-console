@@ -17,22 +17,17 @@ use Symfony\Component\Console\Output\OutputInterface;
  * @author Juan Manuel Torres <kinojman@gmail.com>
  * @copyright (c) 2013, onema.io
  */
-class CreateAppCommand extends OpsWorksCommand
+class UpdateAppCommand extends OpsWorksCommand
 {
     protected function configure()
     {
         $this
-            ->setName('opsworks:create:app')
-            ->setDescription('Create an app.')
+            ->setName('opsworks:update:app')
+            ->setDescription('Update an app.')
             ->addArgument(
-                'stack',
+                'app',
                 InputArgument::REQUIRED,
-                'Stack ID'
-            )
-            ->addArgument(
-                'name',
-                InputArgument::REQUIRED,
-                'App Name'
+                'App ID'
             )
             ->addOption(
                 'source-type',
@@ -70,14 +65,10 @@ class CreateAppCommand extends OpsWorksCommand
     protected function execute(InputInterface $input, OutputInterface $output)
     {
         // Get Arguments
-        $stackId = $input->getArgument('stack');
-        $name = $input->getArgument('name');
+        $stackId = $input->getArgument('app');
 
         $options = array(
-            'StackId'   => $stackId,
-            'Type'      => 'php',
-            'Name'      => $name,
-            'Shortname' => $name,
+            'AppId'   => $stackId,
         );
 
         $options['AppSource']['Type'] = $input->getOption('source-type');
@@ -86,8 +77,8 @@ class CreateAppCommand extends OpsWorksCommand
         $options['AppSource']['SshKey']   = $this->getShhKeyFromPath($input->getOption('ssh-key-path'));
         $options['Attributes']['DocumentRoot'] = $input->getOption('document-root');
 
-        $result = $this->client->createApp($options);
+        $result = $this->client->updateApp($options);
 
-        $output->writeln('<info>SUCCESS! App ID: '.$result['AppId']. '</info>');
+        $output->writeln('<info>SUCCESS!</info>');
     }
 }
