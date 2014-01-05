@@ -47,7 +47,9 @@ php app/console opsworks:update:stack:chef stack type url ssh-key-path
  - **url:**                   Repository URL.
  - **revision:**              Revision or Branch.
  - **ssh-key-path:**          Path to ssh key.
- 
+
+####Options:####
+ - **custom-json**            A string that contains user-defined, custom JSON. must be escaped.
  
 ###Create a new PHP layer###
 ```
