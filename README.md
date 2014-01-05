@@ -38,7 +38,7 @@ php app/console opsworks:create:stack name
 
 ###Enable and update custom chef settings###
 ```
-php app/console opsworks:update:stack:chef stack type url ssh-key-path
+php app/console opsworks:update:stack:chef stack type url ssh-key-path --custom-json="..."
 ``` 
 
 ####Arguments:####
