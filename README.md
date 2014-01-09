@@ -25,7 +25,7 @@ parameters:
 
 The easiest way to get the `aws_iam_role` and `aws_instance_role` is to create a stack through the aws console. The console will automatically generate these roles for you. After the stack has been created you can get these values from the **Stack Settings** page and re-use these accross different stacks, or use them to create new ones.
 
-To create your own see [Inscence Profiles](http://docs.aws.amazon.com/IAM/latest/UserGuide/instance-profiles.html), [IAM Roles for Amazon EC2](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-roles-for-amazon-ec2.html), and [Secure access to AWS Service APIs from EC2](http://aws.typepad.com/aws/2012/06/iam-roles-for-ec2-instances-simplified-secure-access-to-aws-service-apis-from-ec2.html).
+To create your own see [Instance Profiles](http://docs.aws.amazon.com/IAM/latest/UserGuide/instance-profiles.html), [IAM Roles for Amazon EC2](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-roles-for-amazon-ec2.html), and [Secure access to AWS Service APIs from EC2](http://aws.typepad.com/aws/2012/06/iam-roles-for-ec2-instances-simplified-secure-access-to-aws-service-apis-from-ec2.html).
 
 ##Usage
 ###Create new stack###
