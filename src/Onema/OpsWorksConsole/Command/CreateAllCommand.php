@@ -139,7 +139,7 @@ class CreateAllCommand extends OpsWorksCommand
             'command' => 'opsworks:create:instance',
             'stack'   => $this->stackId,
             'layer'   => $this->layerId,
-            'instance-type' => 'm1.small',
+            'instance-type' => 'c1.medium',
         );
 
         return $this->runCommand($command, $arguments);
